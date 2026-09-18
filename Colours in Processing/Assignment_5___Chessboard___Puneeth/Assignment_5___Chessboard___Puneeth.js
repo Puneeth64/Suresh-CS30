@@ -19,16 +19,20 @@ function setup() {
 function whiteBlackSquare(x,y){ // This function is called when you want to start with a white square, then go to black
   let x2= x + 50 //adds 50 to x in order push the 2nd square to be 50px away
   fill(255); //colour = white
+  stroke(255); //fixes the weird black lines
   square(x,y, 50); // creates the first square with the x and y params, and size of 50
   fill(0); //colour = black
+  stroke(0);
   square(x2,y, 50); //uses the x2 var defined above (so x+50px), but same y val so it's in the same line. Also 50 px in size
 }
 
 function blackWhiteSquare(x,y){ // This function is called when you want to start with a black square, then switch to white
   let x2 = x + 50; //same reason as above
-  fill(0); //colour = black this time   
+  fill(0); //colour = black this time 
+  stroke(0);
   square(x, y, 50);
   fill(255); //this time, the colour is white
+  stroke(255);
   square(x2, y, 50);
 }
 function draw() {
