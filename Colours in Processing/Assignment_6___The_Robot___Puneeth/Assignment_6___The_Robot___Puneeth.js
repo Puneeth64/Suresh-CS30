@@ -5,11 +5,11 @@ function setup() {
   createCanvas(1000,1000);
   background(255);
   
-  draw_head(175);
-  draw_arms(150,255,0,255);
-  draw_legs(100,0,200,255);
-  draw_body(109);
- // draw_the_robot(10, 69, 69, 69);
+  //draw_head(175); //function to draw the head
+  //draw_arms(150,255,0,255); //function to draw the arms
+  //draw_legs(100,0,200,255); //function to draw the legs
+  //draw_body(109); //function to draw the body
+  draw_the_robot(250, 255, 0, 255);
 }
 
   function draw_head(pc) {
@@ -66,6 +66,13 @@ function setup() {
     fill(sc1, sc2, sc3); //sets feet to same colour as defined in function
     circle(x - 25, y + 110, 30); //creates right foot
     circle(x + 25, y + 110, 30); //creates left foot
+  }
+  
+  function draw_the_robot(pc, sc1, sc2, sc3) { //defines the variavles that are passed through
+    draw_head(pc); //passes the variables to all the existing functions.
+    draw_arms(pc, sc1, sc2, sc3);
+    draw_legs(pc, sc1 ,sc2, sc3);
+    draw_body(pc);
   }
 
 function draw() {
