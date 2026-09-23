@@ -2,9 +2,15 @@
 #2107296@gscs.ca
 #Assignment 6 - The Robot!
 
-def setup():
-    size(900, 600)
-    background(255)
+sc1 = 255 # defines global variables; starts off as yellow
+sc2 = 255
+sc3 = 0
+
+def setup(): #Runs this only once, when the script starts
+    size(400, 600) #sets the canvas size to 400x600px, matches the robot size
+    background(0, 0, 160) #Background is all blue
+    frame_rate(5) #Sets FPS to 5, since it saves power, and this script doesn't need a high frame rate
+    draw_the_robot(250, sc1, sc2, sc3) #Uses the global variables to draw a robot with yellow accents
 
 def draw_head(pc):
     fill(pc) #fills the head with the colour of the pc variable passed to the function (don't need to stroke it, since the default outline is black)
@@ -62,9 +68,8 @@ def draw_the_robot(pc, sc1, sc2, sc3):  #defines the variavles that are passed t
     draw_legs(pc, sc1 ,sc2, sc3)
     draw_body(pc)
     
-def draw():
-    draw_head(175) #function to draw the head
-    draw_arms(150,255,0,255) #function to draw the arms
-    draw_legs(100,0,200,255) #function to draw the legs
-    draw_body(109) #function to draw the body
-    #draw_the_robot(250, 255, 0, 255)
+def mouse_clicked(): #Runs this function when the mouse is clicked
+    global sc1, sc2 #Modifies the globalv variables sc1 and sc2
+    sc1 = mouse_y #Sets the red value to mouse's y value
+    sc2 = mouse_x #Sets the green value to mouse's x value
+    draw_the_robot(250, sc1, sc2, sc3) #draws the robot with the new values.
