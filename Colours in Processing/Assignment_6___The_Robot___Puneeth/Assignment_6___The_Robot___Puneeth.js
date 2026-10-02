@@ -1,18 +1,18 @@
 //Puneeth Suresh
 //2107296@gscs.ca
 //Assignment 6 - The Robot!
-function setup() {
-  createCanvas(1000,1000);
-  background(255);
+function setup() { //this runs when the script is started
+  createCanvas(1000,1000); //The canvas has a size of 1000x1000 px
+  background(255); //The BG originally has a greysale value of 255, or white
   
   //draw_head(175); //function to draw the head
   //draw_arms(150,255,0,255); //function to draw the arms
   //draw_legs(100,0,200,255); //function to draw the legs
   //draw_body(109); //function to draw the body
-  draw_the_robot(250, 255, 0, 255);
+  draw_the_robot(250, 255, 0, 255); // The robot is created with a colour of pc = 250, sc1 = 255, sc2 = 0, sc3 = 255
 }
 
-  function draw_head(pc) {
+  function draw_head(pc) { //the pc parameter is what defines the primary colour greyscale  for the head
     fill(pc); //fills the head with the colour of the pc variable passed to the function (don't need to stroke it, since the default outline is black)
     let x = 200 //defines the main x value (makes it easy to move later)
     let y = 200 //defines the main heads y value, for the same reason as above
@@ -26,7 +26,7 @@ function setup() {
     circle(x + 20, y, 10); //creates right eye, 20px to the right.
   }
   
-  function draw_body(pc) {
+  function draw_body(pc) { //the function is given the pc parm for the monochrome value to set the body yo
     let x = 200 //sets the main x value for where the body is
     let y = 350 //and main y value
     fill(pc); //sets the colour of the body, as defined in pc
@@ -42,7 +42,7 @@ function setup() {
     circle(x + 20, y, 10); //d of 10, x is 20 to the right; in relation to the torso
   }
   
-  function draw_arms(pc, sc1, sc2, sc3){
+  function draw_arms(pc, sc1, sc2, sc3){ //Function is given the parameters that dictates the greyscale value for the arms, and RGB value for the hands
     x = 200 //defines where the arms will be centered
     y = 300
    
@@ -55,8 +55,8 @@ function setup() {
    circle(x + 100, y + 5, 30); //left circle is 100 pc to the right.
   }
   
-  function draw_legs(pc, sc1, sc2, sc3) {
-    x = 200
+  function draw_legs(pc, sc1, sc2, sc3) { //fills the legs with the greyscale value for pc, and the feet are the RGB values passed to the function.
+    x = 200 //Where the legs are centered
     y = 400
     
     fill(pc); //fills legs to same colour as pc var defined
@@ -68,7 +68,7 @@ function setup() {
     circle(x + 25, y + 110, 30); //creates left foot
   }
   
-  function draw_the_robot(pc, sc1, sc2, sc3) { //defines the variavles that are passed through
+  function draw_the_robot(pc, sc1, sc2, sc3) { //defines parameters that are given (pc for greyscale, and sc for RGB)
     draw_head(pc); //passes the variables to all the existing functions.
     draw_arms(pc, sc1, sc2, sc3);
     draw_legs(pc, sc1 ,sc2, sc3);

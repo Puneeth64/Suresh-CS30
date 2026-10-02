@@ -1,22 +1,22 @@
 // Puneeth Suresh
 //2107296@gscs.ca
 //Assignment 5 - Chessboard
-function setup() {
-  createCanvas(200,200);
+function setup() { //
+  createCanvas(200,200); //The canvas is 200x200px in size
 
-  for (let y = 0; y <= 150; y += 50) { //y starts out as 0, until y is less than or equal to 150. y increases by 50 each loop (since there is 4 layers : 0, 50, 100 and 150)
+  for (let y = 0; y <= 150; y += 50) { //y starts out as 0, until y is less than or equal to 150. y increases by 50 each loop (since there are 4 layers : 0, 50, 100 and 150)
     for (let x = 0; x <= 100; x += 100) { //additionally, x starts as 0, adds 100 each loop, ends when x is 100 (since you only need to repeat the x axis twice to get 4 squares)
       if (y % 100 === 0) { //if the y value is 100 or 0, first square is white
         whiteBlackSquare(x, y); //calls function to place white square first then black
       } 
       else { //if its not 0 or 150 (aka 50 or 100), it starts with a black square
-        blackWhiteSquare(x, y);
+        blackWhiteSquare(x, y); //calls the blackwhitesquare funtion to place a black then a white square at the coords defined in the script (such as 50,100)
       }
     }
   }
 }
 
-function whiteBlackSquare(x,y){ // This function is called when you want to start with a white square, then go to black
+function whiteBlackSquare(x,y){ // This function is called when you want to start with a white square, then go to black. The x,y parameters dictate where the top left corner of the first placed square will be.
   let x2= x + 50 //adds 50 to x in order push the 2nd square to be 50px away
   fill(255); //colour = white
   stroke(255); //fixes the weird black lines
@@ -26,7 +26,7 @@ function whiteBlackSquare(x,y){ // This function is called when you want to star
   square(x2,y, 50); //uses the x2 var defined above (so x+50px), but same y val so it's in the same line. Also 50 px in size
 }
 
-function blackWhiteSquare(x,y){ // This function is called when you want to start with a black square, then switch to white
+function blackWhiteSquare(x,y){ // This function is called when you want to start with a black square, then switch to white. The x,y parameters dictate where the top left corner of the first placed square will be
   let x2 = x + 50; //same reason as above
   fill(0); //colour = black this time 
   stroke(0);
@@ -35,6 +35,6 @@ function blackWhiteSquare(x,y){ // This function is called when you want to star
   stroke(255);
   square(x2, y, 50);
 }
-function draw() {
+function draw() { //not used
 
 }
