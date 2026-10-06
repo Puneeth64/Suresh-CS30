@@ -11,7 +11,7 @@ y = 150 #Initial y value, will also change as mouse is clicked
 def setup(): #Starts right when the script is initiated
     size(300, 300) #Sets the canvas to 300x300px
     change_bg() #Generates the inital BG with the bg_col values defined above
-    summon_circle() #Generates the inital circle with the global variables defined above
+    summon_circle() #Generates the inital circle with the global variables (This will make sense in the actual function)
    
 def summon_circle(): #Called when the circle should be created
     global circle_col, x, y #says that these variables are global, not confined to this function

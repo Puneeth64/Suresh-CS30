@@ -31,4 +31,4 @@ def draw(): #The code here is rerun 60 times/second
     circle_x = constrain(mouse_x, border + r, width - border - r) #This keeps the circle's X dimension in check, by using the built-in constrain function. It also uses the width and border variables to calculate the max distance the circle can move, so it works with any canvas and border size and combination. It also uses the mouse_x variable, so it follows the mouse.
     circle_y = constrain(mouse_y, border + r, height - border - r) #This keeps the circle's Y axis in check.
     
-    circle(circle_x, circle_y, d) #The circle is drawn using the coords defined in the function defined above, and uses the diameter defined in the global variable.
+    circle(circle_x, circle_y, d) #The circle is drawn using the coords defined in the function defined above in the parameters circle_x and circle_y, and uses the diameter defined in the global variable.

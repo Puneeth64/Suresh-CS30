@@ -6,13 +6,13 @@ sc1 = 255 # defines global variables; starts off as yellow
 sc2 = 255
 sc3 = 0
 
-def setup(): #Runs this only once, when the script starts
+def setup(): #Runs this only once, when the script starts. The code here creates the canvas, sets the BG, limits the FPS, and draws the initial bot.
     size(400, 600) #sets the canvas size to 400x600px, matches the robot size
     background(0, 0, 160) #Background is all blue
     frame_rate(5) #Sets FPS to 5, since it saves power, and this script doesn't need a high frame rate
     draw_the_robot(250, sc1, sc2, sc3) #Uses the global variables to draw a robot with yellow accents
 
-def draw_head(pc):
+def draw_head(pc): #This draws the head, the PC parameter sets the primary colour of the head
     fill(pc) #fills the head with the colour of the pc variable passed to the function (don't need to stroke it, since the default outline is black)
     x = 200 #defines the main x value (makes it easy to move later)
     y = 200 #defines the main heads y value, for the same reason as above
@@ -24,7 +24,7 @@ def draw_head(pc):
     circle(x - 20, y, 10) #creates the left eye, -20 px from the middle of the head, same y value
     circle(x + 20, y, 10) #creates right eye, 20px to the right.
   
-def draw_body(pc): 
+def draw_body(pc):  #This draws the body, the PC parameter sets the primary colour of the body.
     x = 200 #sets the main x value for where the body is
     y = 350 #and main y value
     fill(pc) #sets the colour of the body, as defined in pc
@@ -39,7 +39,7 @@ def draw_body(pc):
     fill(255, 255, 0) #colour of yellow
     circle(x + 20, y, 10) #d of 10, x is 20 to the right in relation to the torso
   
-def draw_arms(pc, sc1, sc2, sc3):
+def draw_arms(pc, sc1, sc2, sc3): #This draws the arms. The pc parm sets the colour of the arms, and the sc 1-3 parameter sets the RGB value of the hands.
     x = 200 #defines where the arms will be centered
     y = 300
     fill(pc) #fills the arms using the var pc
@@ -50,8 +50,8 @@ def draw_arms(pc, sc1, sc2, sc3):
     circle(x + 100, y + 5, 30) #left circle is 100 pc to the right.
 
   
-def draw_legs(pc, sc1, sc2, sc3): 
-    x = 200
+def draw_legs(pc, sc1, sc2, sc3): #This draws the legs, pc sets the main colour of the legs, while sc 1-3 sets the colour of their feet.
+    x = 200 #Defines where the legs' coords are.
     y = 400
     
     fill(pc) #fills legs to same colour as pc var defined
@@ -62,8 +62,8 @@ def draw_legs(pc, sc1, sc2, sc3):
     circle(x - 25, y + 110, 30) #creates right foot
     circle(x + 25, y + 110, 30) #creates left foot
   
-def draw_the_robot(pc, sc1, sc2, sc3):  #defines the variavles that are passed through
-    draw_head(pc) #passes the variables to all the existing functions.
+def draw_the_robot(pc, sc1, sc2, sc3):  #These are the parameters that will get passed through to the individual body-part functions.
+    draw_head(pc) #passes the parameters to all the existing functions.
     draw_arms(pc, sc1, sc2, sc3)
     draw_legs(pc, sc1 ,sc2, sc3)
     draw_body(pc)
