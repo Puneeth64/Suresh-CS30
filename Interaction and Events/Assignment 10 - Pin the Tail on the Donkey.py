@@ -1,13 +1,13 @@
 #Puneeth Suresh
 #2107296@gscs.ca
 #Assignment 10 - Pin the Tail on the Donkey
-def setup(): #Runs once when the script is started
+def setup(): #Runs once when the script is started. Creates the canvas, sets the BG, and creates the initial donkey.
     size(400, 400) # makes the canvas size 400px x 400px, make the donkey mostly centered, and gives enough room
     background(100)
     summon_donkey() #Calls this function on startup to place the donkey on the background
     frame_rate(10) #Sets the FPS to 10 to be more efficient. This script does not require a high frame rate
     
-def summon_donkey():
+def summon_donkey(): #This function is calld to summon the donkey at the center of the screen
         fill(210, 105, 30) #Donkey code copy pasted from the assignment dropbox; makes the orange "donkey"
         rect(130, 160, 40, 40)
         rect(145, 220, 20, 55)
