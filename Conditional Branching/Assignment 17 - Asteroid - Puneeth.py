@@ -4,6 +4,7 @@
 
 import ctypes #This library is used to send calls to the Windows Media controller
 
+#creates the global vars, so the ast' x,y coords, and the size. Also holds the score, and current game state as a boolean
 ast_x = 0
 ast_y = 0
 ast_size = 0
@@ -36,6 +37,10 @@ def draw(): #This handles the actual drawing of asteroids, and text (ex. score, 
         ast_size += 0.5 
         fill(150, 150, 150) # Grey asteroid
         
+        # Draw the asteroid circle
+        no_stroke() #No borders for the asteroid
+        circle(ast_x, ast_y, ast_size) #The actual asteroid is placed at ast_x, ast_y with a diameter of ast_size.
+        
         # Makes sure that the asteroid is not bigger than a diameter of 100
         if ast_size >= 100:
             ast_size = 100
@@ -50,10 +55,6 @@ def draw(): #This handles the actual drawing of asteroids, and text (ex. score, 
         fill(255, 0, 0) #the text is red
         text("Game over!", width / 2, height / 2) #The game over text is placed right in the center of the canvas
         text("Press 'r' to restart", width / 2, height / 2 + 50) #The press r to restart key is centered, and placed 50 px below the game over text
-
-    # Draw the asteroid circle
-    no_stroke() #No borders for the asteroid
-    circle(ast_x, ast_y, ast_size) #The actual asteroid is placed at ast_x, ast_y with a diameter of ast_size.
     
     # Display the score
     text_align(LEFT, TOP) #the score is at the top left
@@ -62,7 +63,7 @@ def draw(): #This handles the actual drawing of asteroids, and text (ex. score, 
     text("Score: " + str(score), 20, 20) #Displys the actual score, by converting the score var into a string.
 
 def mouse_pressed(): #This lets the program know if, and where your mouse was clicked, and whether or not you clicked the asteroid. It also handles the scoring.
-    global score, game_over
+    global score, game_over, ast_x, ast_y, ast_size
 
     if not game_over: #only lets you hit the asteroid if the game is still running
         if inside_asteroid(mouse_x, mouse_y, ast_x, ast_y, ast_size): #Checks the function whether the mouse is within the asteroid.
@@ -80,9 +81,9 @@ def key_pressed(): #resets the game if r or R is pressed
 
 def reset_asteroid(): #This spawns a new asteroid at a random coord
     global ast_x, ast_y, ast_size
-    #Generates new random position between 50 and 700
-    ast_x = random(50, 700)
-    ast_y = random(50, 700)
+    #Generates new random position between 50 and 650 (so it's not out of bounds)
+    ast_x = random(50, 650)
+    ast_y = random(50, 650)
     ast_size = 0 # Starts at diameter 0
 
 def inside_asteroid(x, y, ast_x, ast_y, ast_size): #Function determines if the mouse click is within the asteroid's diameter
