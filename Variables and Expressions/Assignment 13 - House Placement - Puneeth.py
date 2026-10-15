@@ -6,7 +6,7 @@ def setup(): #This runs when the script is first started.
     size(400, 400) #The canvas is 400x 400px.
 
 
-def draw(): #The code in this function is looped 60 times per second
+def draw(): #The code in this function is looped 60 times per second. This places the actual structures, like the trees, the lake, and the house(@ mouse_x and mouse_y)
     background(0, 101, 0)#The background is wiped to green upon each pass, so that the house doesn't have trails.
     
     draw_tree(50, 20)#All these function calls draw a tree at different coords using the parameters (x,y)
