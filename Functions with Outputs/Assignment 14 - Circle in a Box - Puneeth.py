@@ -5,7 +5,7 @@
 #Global vars
 d = 50 #Diameter of the circle following mouse
 border = 50 #Size of the borders in px, change this to change all the border sizes
-circle_x = 0#The circle's x value and below y value
+circle_x = 0#The circle's x value and below is the y value
 circle_y = 0
 
 def setup(): #This function runs once upon the script's startup. This creates the actual canvas, and disables outlines for all shapes.
