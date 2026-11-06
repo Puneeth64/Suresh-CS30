@@ -10,7 +10,14 @@ city_y = []     # Stores y-coordinates as integers
 
 map_img = ""
 
-
+def setup(): #Creates the canvas, loads the txt file, and loads the map data
+    global map_img
+    size(800, 800)
+    
+    load_city_data("popdata.txt")
+    
+    map_img = load_image("Canada_provinces_blank.png")
+    
 def load_city_data(filename): #reads the pop txt file, parses it and puts the data into indiviudal lists.
     
     file = open(filename, "r")
@@ -33,8 +40,6 @@ def load_city_data(filename): #reads the pop txt file, parses it and puts the da
         city_y.append(y)
         
     file.close()  #Safely closes the file once it has read it
-
-
 
 
 def draw_cities(): #Draws the pop and names of every city
@@ -62,19 +67,12 @@ def draw_cities(): #Draws the pop and names of every city
             text(name, x + 5, y)
 
 
-def setup(): #Creates the canvas, loads the txt file, and loads the map data
-    global map_img
-    size(800, 800)
-    
-    load_city_data("popdata.txt")
-    
-    map_img = load_image("Canada_provinces_blank.png")
-    
+  
 def draw(): #Renders the city pop circles, the text, and the map img.
     global map_img
     
-    draw_cities() #Calls the function that draws the pop circles and the text.
-    
     image(map_img, 0, 0, 800, 800) #Renders the map image; top left corner @ (0,0) with the height/width fixed at 800x800px
+    
+    draw_cities() #Calls the function that draws the pop circles and the text.
     
     no_loop()  #Prevents it from looping, since it only needs a single iteration to draw all the data.
