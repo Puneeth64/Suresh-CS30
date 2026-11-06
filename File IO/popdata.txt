@@ -1,0 +1,18 @@
+Whitehorse, 28201, 65, 300
+Winnipeg, 758515, 318, 637
+Charlottetown, 52390, 690, 640
+Calgary, 1305550, 153, 565
+Quebec City, 733156, 598, 655
+Regina, 224996, 245, 615
+St. John's, 185565, 785, 560
+Vancouver, 2426160, 57, 556
+Yellowknife, 20340, 218, 380
+Ottawa, 1068821, 561, 710
+Edmonton, 1151635, 172, 517
+Fredericton, 64614, 660, 665
+Toronto, 5647656, 530, 740
+Saskatoon, 264637, 235, 555
+Halifax, 348634, 695, 670
+Iqaluit, 7429, 538, 355
+Victoria, 363222, 40, 551
+Montreal, 3675219, 580, 700
