@@ -6,7 +6,6 @@
 
 size(500,500)
 
-background(0)
 
 #================================== Data reading/manipulating vars and dictionaries ===================================
 
@@ -24,6 +23,8 @@ with open("words.txt", "r") as file: #Opens word.txt in read only mode (with bas
                 
 
 #====================================== Drawing the text ==========================
+
+background(0)
 
 fill(255) #makes the text white (since the default black wouln't work)
 
