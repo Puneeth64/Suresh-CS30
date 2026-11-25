@@ -31,7 +31,7 @@ def mouse_pressed(): #Runs when the mouse is clicked to add the current mouse_x 
 def key_pressed(): #This runs the code to randomize r,g and b if c or C is pressed.
     if key == 'c' or key == 'C': #If the key is c or C, it runs the loop below
         for i in range(len(square_x)): #Sets a random value between 0 and 255; square_r, g and b value using a loop that runs for the lenght of square_x.
-            square_r[i] = random(0, 255)
-            square_g[i] = random(0, 255)
-            square_b[i] = random(0, 255)
+            square_r[i] = random(0, 256)
+            square_g[i] = random(0, 256)
+            square_b[i] = random(0, 256)
 
